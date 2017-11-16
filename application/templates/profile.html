@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% set title = 'Profile viewer' %}
+
+{% block content %}
+{% if profile %}
+<table border="1">
+    <tr>
+        <th>Item</th>
+        <th>Data</th>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>{{ profile['name'] }}
+    </tr>
+    <tr>
+        <th>Role</th>
+        <td>{{ profile['role'] }}
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>{{ profile['email'] }}
+    </tr>
+</table>
+{% endif %}
+<form action="{{ url_for('route_profile') }}" method="get">
+    Input ID number:
+    <input type="number" name="id"></input>
+    <input type="submit"></input>
+</form>
+{% endblock %}

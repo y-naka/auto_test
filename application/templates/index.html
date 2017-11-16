@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% set title = 'Home' %}
+
+{% block content %}
+<p>This is my first web site!</p>
+<ul>
+    <li><a href="{{ url_for('route_profile') }}">Profile viewer</a></li>
+    <li><a href="{{ url_for('route_bbs') }}">BBS</a></li>
+</ul>
+{% endblock %}

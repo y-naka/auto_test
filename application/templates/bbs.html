@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% set title = 'BBS' %}
+
+{% block content %}
+<table border="1">
+    {% for message in messages %}
+    <tr>
+        <td>{{ message[0] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<form action="{{ url_for('route_bbs') }}" method="post">
+    Send message:
+    <input type="text" name="message"></input>
+    <input type="submit"></input>
+</form>
+{% endblock %}
