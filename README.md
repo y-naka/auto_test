@@ -32,21 +32,27 @@ flask run
 
 ## 構成
 
+```
 .
 ├── README.md
-├── config.py
-├── requirements.txt
-├── run.py
-├── techapp
+├── application
 │   ├── __init__.py
 │   ├── models.py
+│   ├── techathon.db
 │   ├── templates
 │   │   ├── bbs.html
 │   │   ├── index.html
 │   │   ├── layout.html
 │   │   └── profile.html
 │   └── views.py
+├── config.py
+├── run.py
+├── setup.cfg
+├── setup.py
 └── tests
+    └── test_application.py
+```
+
 
 * config.py: APIの設定を規定
 * run.py: コマンドライン用関数を格納
