@@ -36,31 +36,25 @@ class Message(db.Model):
 
 
 @app.before_first_request
-def init():
+def init_schema():
     db.create_all()
-    profiles = [
-        {
-            'name': 'Taro Tanaka',
-            'email': 'taro.tanaka@exmaple.com',
-            'role': 'Student'
-        },
-        {
-            'name': 'Hanako Suzuki',
-            'email': 'hanako.suzuki@example.com',
-            'role': 'Student'
-        },
-        {
-            'name': 'Ichiro Nakamura',
-            'email': 'ichiro.nakamura@example.com',
-            'role': 'Staff'
-        },
-        {
-            'name': 'Takuji Yamada',
-            'email': 'takuji.yamada@exmaple.com',
-            'role': 'Associate professor'
-        }
-    ]
-    for d in profiles:
-        profile = Profile(name=d["name"], email=d["email"], role=d["role"])
-        db.session.add(profile)
+
+
+def init_data(initialized_data=None):
+    if initialized_data is None:
+        initialized_data = {}
+    for k in initialized_data.keys():
+        data = initialized_data[k]
+        for d in data:
+            if k == "profile":
+                q = Profile(name=d["name"], email=d["email"], role=d["role"])
+            elif k == "message":
+                q = Message(message=d["message"])
+            else:
+                raise ValueError("Invalid key for schema: {0}".format(k))
+            db.session.add(q)
     db.session.commit()
+
+
+def drop():
+    db.drop_all()
