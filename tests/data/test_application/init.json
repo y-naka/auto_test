@@ -1,0 +1,29 @@
+{
+    "profile": [
+        {
+            "name": "Taro Tanaka",
+            "email": "taro.tanaka@exmaple.com",
+            "role": "Student"
+        },
+        {
+            "name": "Hanako Suzuki",
+            "email": "hanako.suzuki@example.com",
+            "role": "Student"
+        },
+        {
+            "name": "Ichiro Nakamura",
+            "email": "ichiro.nakamura@example.com",
+            "role": "Staff"
+        },
+        {
+            "name": "Takuji Yamada",
+            "email": "takuji.yamada@example.com",
+            "role": "Associate professor"
+        }
+    ],
+    "message": [
+        {
+            "message": "Test message"
+        }
+    ]
+} 
