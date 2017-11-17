@@ -30,6 +30,12 @@ APIの起動
 flask run
 ```
 
+テストの実行
+
+```bash
+python setup.py test
+```
+
 ## 構成
 
 ```
@@ -38,7 +44,6 @@ flask run
 ├── application
 │   ├── __init__.py
 │   ├── models.py
-│   ├── techathon.db
 │   ├── templates
 │   │   ├── bbs.html
 │   │   ├── index.html
@@ -50,7 +55,13 @@ flask run
 ├── setup.cfg
 ├── setup.py
 └── tests
-    └── test_application.py
+    ├── data
+    │   ├── test_application
+    │   │   └── init.json
+    │   └── test_application_model
+    │       └── init.json
+    ├── test_application.py
+    └── test_application_model.py
 ```
 
 
