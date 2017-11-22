@@ -1,5 +1,7 @@
 # Sample Application
 
+[![Build Status](https://travis-ci.org/y-naka/auto_test.svg?branch=master)](https://travis-ci.org/y-naka/auto_test)
+
 ## 概要
 
 Flaskを使ったサンプルのアプリケーション
